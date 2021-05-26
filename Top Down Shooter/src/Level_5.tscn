@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/walls.tres" type="TileSet" id=1]
+[ext_resource path="res://src/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Player.png" type="Texture" id=3]
+[ext_resource path="res://assets/light.png" type="Texture" id=4]
+[ext_resource path="res://src/Player_Last_level.gd" type="Script" id=5]
+[ext_resource path="res://src/L5 to End_Screen.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="World" type="Node2D"]
+position = Vector2( 0.42424, 0.141411 )
+
+[node name="Next_level" type="Sprite" parent="."]
+modulate = Color( 0.494118, 0, 1, 1 )
+position = Vector2( 759.576, 455.859 )
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hitbox" type="Area2D" parent="Next_level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Next_level/Hitbox"]
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="Next_level"]
+texture = ExtResource( 4 )
+energy = 0.8
+shadow_enabled = true
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.239216, 0.611765, 0.627451, 1 )
+position = Vector2( 415.576, 127.859 )
+scale = Vector2( 129.799, 69.8816 )
+z_index = -1
+texture = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131080, 0, 0, -131079, 0, 0, -131078, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -196588, 0, 0, -196587, 0, 0, -196586, 0, 0, -196585, 0, 0, -196584, 0, 0, -196583, 0, 0, -196582, 0, 0, -196581, 0, 0, -196580, 0, 0, -196579, 0, 0, -196578, 0, 0, -196577, 0, 0, -196576, 0, 0, -196575, 0, 0, -196574, 0, 0, -196573, 0, 0, -196572, 0, 0, -196571, 0, 0, -196570, 0, 0, -196569, 0, 0, -196568, 0, 0, -196567, 0, 0, -196566, 0, 0, -196565, 0, 0, -196564, 0, 0, -196563, 0, 0, -196562, 0, 0, -196561, 0, 0, -196560, 0, 0, -65544, 0, 0, -131024, 0, 0, -8, 0, 0, -65488, 0, 0, 65528, 0, 0, 48, 0, 0, 131064, 0, 0, 65584, 0, 0, 196600, 0, 0, 131120, 0, 0, 262136, 0, 0, 196656, 0, 0, 327672, 0, 0, 262192, 0, 0, 393208, 0, 0, 327728, 0, 0, 458744, 0, 0, 393264, 0, 0, 524280, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458800, 0, 0, 589816, 0, 0, 524299, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 524320, 0, 0, 524321, 0, 0, 524322, 0, 0, 524336, 0, 0, 655352, 0, 0, 589835, 0, 0, 589872, 0, 0, 720888, 0, 0, 655371, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655408, 0, 0, 786424, 0, 0, 720907, 0, 0, 720910, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720944, 0, 0, 851960, 0, 0, 786443, 0, 0, 786446, 0, 0, 786463, 0, 0, 786480, 0, 0, 917496, 0, 0, 851979, 0, 0, 851982, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851999, 0, 0, 852016, 0, 0, 983032, 0, 0, 917515, 0, 0, 917518, 0, 0, 917521, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917535, 0, 0, 917552, 0, 0, 1048568, 0, 0, 983051, 0, 0, 983054, 0, 0, 983057, 0, 0, 983068, 0, 0, 983071, 0, 0, 983088, 0, 0, 1114104, 0, 0, 1048587, 0, 0, 1048590, 0, 0, 1048593, 0, 0, 1048604, 0, 0, 1048607, 0, 0, 1048624, 0, 0, 1179640, 0, 0, 1114123, 0, 0, 1114126, 0, 0, 1114129, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114140, 0, 0, 1114143, 0, 0, 1114160, 0, 0, 1245176, 0, 0, 1179659, 0, 0, 1179662, 0, 0, 1179665, 0, 0, 1179670, 0, 0, 1179673, 0, 0, 1179676, 0, 0, 1179679, 0, 0, 1179696, 0, 0, 1310712, 0, 0, 1245195, 0, 0, 1245198, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245209, 0, 0, 1245212, 0, 0, 1245215, 0, 0, 1245232, 0, 0, 1376248, 0, 0, 1310731, 0, 0, 1310734, 0, 0, 1310737, 0, 0, 1310745, 0, 0, 1310748, 0, 0, 1310751, 0, 0, 1310768, 0, 0, 1441784, 0, 0, 1376267, 0, 0, 1376270, 0, 0, 1376273, 0, 0, 1376274, 0, 0, 1376275, 0, 0, 1376276, 0, 0, 1376277, 0, 0, 1376278, 0, 0, 1376279, 0, 0, 1376280, 0, 0, 1376281, 0, 0, 1376284, 0, 0, 1376287, 0, 0, 1376304, 0, 0, 1507320, 0, 0, 1441803, 0, 0, 1441806, 0, 0, 1441820, 0, 0, 1441823, 0, 0, 1441840, 0, 0, 1572856, 0, 0, 1507339, 0, 0, 1507342, 0, 0, 1507356, 0, 0, 1507359, 0, 0, 1507376, 0, 0, 1638392, 0, 0, 1572875, 0, 0, 1572878, 0, 0, 1572879, 0, 0, 1572880, 0, 0, 1572881, 0, 0, 1572882, 0, 0, 1572883, 0, 0, 1572884, 0, 0, 1572885, 0, 0, 1572886, 0, 0, 1572887, 0, 0, 1572888, 0, 0, 1572889, 0, 0, 1572890, 0, 0, 1572891, 0, 0, 1572892, 0, 0, 1572895, 0, 0, 1572912, 0, 0, 1703928, 0, 0, 1638411, 0, 0, 1638431, 0, 0, 1638448, 0, 0, 1769464, 0, 0, 1703947, 0, 0, 1703967, 0, 0, 1703984, 0, 0, 1835000, 0, 0, 1769483, 0, 0, 1769484, 0, 0, 1769485, 0, 0, 1769486, 0, 0, 1769487, 0, 0, 1769488, 0, 0, 1769489, 0, 0, 1769490, 0, 0, 1769491, 0, 0, 1769492, 0, 0, 1769493, 0, 0, 1769494, 0, 0, 1769495, 0, 0, 1769496, 0, 0, 1769497, 0, 0, 1769498, 0, 0, 1769499, 0, 0, 1769500, 0, 0, 1769501, 0, 0, 1769502, 0, 0, 1769503, 0, 0, 1769520, 0, 0, 1769521, 0, 0, 1769522, 0, 0, 1769523, 0, 0, 1900536, 0, 0, 1835059, 0, 0, 1966072, 0, 0, 1966073, 0, 0, 1966074, 0, 0, 1966075, 0, 0, 1966076, 0, 0, 1966077, 0, 0, 1966078, 0, 0, 1966079, 0, 0, 1900544, 0, 0, 1900545, 0, 0, 1900546, 0, 0, 1900547, 0, 0, 1900548, 0, 0, 1900549, 0, 0, 1900550, 0, 0, 1900551, 0, 0, 1900552, 0, 0, 1900553, 0, 0, 1900554, 0, 0, 1900555, 0, 0, 1900556, 0, 0, 1900557, 0, 0, 1900558, 0, 0, 1900559, 0, 0, 1900560, 0, 0, 1900561, 0, 0, 1900562, 0, 0, 1900563, 0, 0, 1900564, 0, 0, 1900565, 0, 0, 1900566, 0, 0, 1900567, 0, 0, 1900568, 0, 0, 1900569, 0, 0, 1900570, 0, 0, 1900571, 0, 0, 1900572, 0, 0, 1900573, 0, 0, 1900574, 0, 0, 1900575, 0, 0, 1900576, 0, 0, 1900577, 0, 0, 1900578, 0, 0, 1900579, 0, 0, 1900580, 0, 0, 1900581, 0, 0, 1900582, 0, 0, 1900583, 0, 0, 1900584, 0, 0, 1900585, 0, 0, 1900586, 0, 0, 1900587, 0, 0, 1900588, 0, 0, 1900589, 0, 0, 1900590, 0, 0, 1900595, 0, 0, 1966126, 0, 0, 1966131, 0, 0, 2031662, 0, 0, 2031667, 0, 0, 2097198, 0, 0, 2097199, 0, 0, 2097200, 0, 0, 2097201, 0, 0, 2097202, 0, 0, 2097203, 0, 0 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 687.576, 319.859 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 183.576, 39.8586 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 687.576, 23.8586 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 215.576, 287.859 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 551.576, 31.8586 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 111.576, 407.859 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -16.4243, 247.859 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 63.5757, 31.8586 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -72.4243, 31.8586 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 2 )]
+position = Vector2( -32.4243, 351.859 )
+
+[node name="Enemy11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 391.576, -0.141411 )
+
+[node name="Enemy12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 615.576, 391.859 )
+
+[node name="Enemy13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 359.576, 55.8586 )
+
+[node name="Enemy14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 743.576, 263.859 )
+
+[node name="Enemy15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 119.576, 191.859 )
+
+[node name="Enemy16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 751.576, 423.859 )
+
+[node name="Enemy17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 791.576, 487.859 )
+
+[node name="Enemy18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 407.576, 143.859 )
+
+[node name="Enemy19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 479.576, 207.859 )
+
+[node name="Enemy20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 335.576, 191.859 )
+
+[node name="Enemy21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 479.576, 423.859 )
+
+[node name="Enemy22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 311.576, 367.859 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 311.576, 255.859 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+scale = Vector2( 0.9, 0.9 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
+
+[node name="Light2D" type="Light2D" parent="Player"]
+texture = ExtResource( 4 )
+color = Color( 0, 1, 1, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.12549, 0.12549, 0.12549, 0 )
+
+[connection signal="body_entered" from="Next_level/Hitbox" to="Next_level" method="_on_Hitbox_body_entered"]
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
